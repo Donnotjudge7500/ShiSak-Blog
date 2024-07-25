@@ -15,6 +15,7 @@ function PostCard({
                 alt={ title }
                 className="h-[200px] w-full rounded-md object-cover shadow-sm"
             />
+
             <div className="p-4">
                 <h1 className="text-lg font-semibold min-h-[56px]">{ title }</h1>
                 <p className="mt-3 text-sm text-gray-600">

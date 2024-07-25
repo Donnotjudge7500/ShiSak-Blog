@@ -44,7 +44,7 @@ function Header() {
             <div className="right-24 top-[24px] absolute">
                 <div className="relative text-zinc-900 flex justify-between items-center gap-10 h-full">
                     <nav>
-                        <ul  className='flex gap-6'>
+                        <ul className='flex gap-6'>
                             {
                                 navItems.map((item) =>
                                     item.active ? (
