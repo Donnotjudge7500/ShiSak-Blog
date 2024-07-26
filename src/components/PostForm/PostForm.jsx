@@ -1,4 +1,4 @@
-import React, { useEffect, useCallback } from 'react'
+import React, { useEffect, useCallback, useState } from 'react'
 import { useNavigate, Link, useParams } from 'react-router-dom';
 import { RTE, Input, Button, Select } from '../Index.js';
 import { useForm } from 'react-hook-form';
@@ -7,9 +7,11 @@ import configurationService from '../../appwrite/configuration.js';
 
 
 function PostForm({ post }) {
+    const [uploading, setUploading] = useState(false);
     const { slug } = useParams();
     const navigate = useNavigate();
-    const userData = useSelector((store) => store.authenticationSlice.userData)
+    const userData = useSelector((store) => store.authenticationSlice.userData);
+
     const { watch, handleSubmit, register, setValue, getValues, control } = useForm({
         defaultValues: {
             title: post?.title || '',
@@ -32,6 +34,7 @@ function PostForm({ post }) {
             }
         } else {
             const file = configurationService.uploadFile(data.image[0]);
+            setUploading(true);
             if (file) {
                 const fileId = (await file).$id;
                 data.featuredImage = fileId;
@@ -42,6 +45,7 @@ function PostForm({ post }) {
                 if (databasePost) {
                     navigate(`/post/${databasePost.$id}`);
                 };
+                setUploading(false);
             };
         };
     };
@@ -56,6 +60,25 @@ function PostForm({ post }) {
         }
         return '';
     }, []);
+
+    const buttonLabel = (uplaod) => {
+        if (post) {
+            if (uplaod) {
+                return "Updating..";
+            }
+            else {
+                return "Update";
+            }
+        }
+        else {
+            if (uplaod) {
+                return "Uploading..";
+            }
+            else {
+                return "Submit";
+            }
+        }
+    }
 
     useEffect(() => {
         const subscription = watch((value, { name }) => {
@@ -113,7 +136,9 @@ function PostForm({ post }) {
                     type='submit'
                     bgColor={ post ? "bg-green-500" : undefined }
                     className='w-full text-lg font-semibold active:scale-95 transition duration-500 py-2 rounded-lg'>
-                    { post ? "Update" : "Submit" }
+                    {/* { post ? "Update" : "Submit" } */ }
+                    
+                    {buttonLabel(uploading)}
                 </Button>
             </div>
         </form>

@@ -34,7 +34,7 @@ function Post() {
     return post && !loading ? (
         <div className='w-full min-h-dvh bg-zinc-50 shadow-lg py-10 flex flex-col items-center gap-4'>
             
-            <div className='w-4/5 shadow-lg bg-green-500 rounded-xl'>
+            <div className='w-1/2 shadow-lg bg-gray-500 rounded-2xl overflow-hidden'>
                 { post.featuredImage ? <img src={ configurationService.getFilePreview(post.featuredImage) } alt={ post.title } />  : <h2>Loading...</h2>}
             </div>
             <div className='flex gap-56 mt-4'>
@@ -46,7 +46,7 @@ function Post() {
                             <Link to={ `/edit-post/${post.$id}` }>
                                 <Button
                                     className='bg-green-600 px-3 py-1 rounded-xl'
-                                > Edit </Button>
+                                > Update </Button>
                             </Link>
                             <Button
                                 className='bg-red-600 px-2 py-1 rounded-xl'

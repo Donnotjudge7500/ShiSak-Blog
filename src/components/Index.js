@@ -13,6 +13,7 @@ import PostForm from './PostForm/PostForm.jsx';
 import AuthenticationLayout from './AuthenticationLayout.jsx';
 import Tutorial from './Tutorial.jsx';
 import Error from './Error.jsx';
+import LoadComponent from './OptimizedLoading/LazyLoadComponent.jsx';
 
 
 export {
@@ -30,5 +31,6 @@ export {
     PostCard,
     AuthenticationLayout,
     Tutorial,
-    Error
+    Error,
+    LoadComponent
 };

@@ -1,7 +1,7 @@
 import React from 'react'
 import { useNavigate } from 'react-router-dom';
 import { useSelector } from 'react-redux';
-import { Tutorial } from '../components/Index.js';
+import { Tutorial } from '../components/index.js';
 import ShiSakBlog from '../assets/ShiSakBlog.png';
 
 function Home() {
