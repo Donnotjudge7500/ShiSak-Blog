@@ -16,8 +16,8 @@ function Post() {
     const dispatch = useDispatch();
 
     const userData = useSelector((store) => store.authenticationSlice.userData);
-
     const isAuther = post && userData ? post.UserId === userData.$id : false;
+    console.log(isAuther)
 
     useEffect(() => {
         if (slug) {
@@ -33,13 +33,16 @@ function Post() {
 
     return post && !loading ? (
         <div className='w-full min-h-dvh bg-zinc-50 shadow-lg py-10 flex flex-col items-center gap-4'>
-            
+
             <div className='w-1/2 shadow-lg bg-gray-500 rounded-2xl overflow-hidden'>
-                { post.featuredImage ? <img src={ configurationService.getFilePreview(post.featuredImage) } alt={ post.title } />  : <h2>Loading...</h2>}
+                { post.featuredImage ? <img src={ configurationService.getFilePreview(post.featuredImage) } alt={ post.title } /> : <h2>Loading...</h2> }
             </div>
             <div className='flex gap-56 mt-4'>
-                <div className='font-bold text-xl w-full'><h1 className='bg-black/5 px-10 py-2 w-fit shadow-lg rounded-md'>{ post.title }</h1>
+                <div className='font-bold text-xl w-full'>
+                    <h1 className='bg-black/5 px-10 py-2 w-fit shadow-lg rounded-md'>{ post.title }</h1>
+                    <p className='font-Inter font-light text-sm mt-5 ml-3'>{ isAuther ? "You are the owner" : "Someone else owns this" }</p>
                 </div>
+
                 <div>
                     { isAuther && (
                         <div className='flex gap-4 text-xl font-Inter'>
@@ -50,7 +53,7 @@ function Post() {
                             </Link>
                             <Button
                                 className='bg-red-600 px-2 py-1 rounded-xl'
-                                onClick={ () => dispatch(openDialogBox())}
+                                onClick={ () => dispatch(openDialogBox()) }
                             >
                                 Delete
                             </Button>

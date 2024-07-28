@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react';
-import { PostCard, Error } from '../components/index.js';
+import { PostCard, Error, Sidebar } from '../components/Index.js';
 import { useSelector, useDispatch } from 'react-redux';
 
 function AllPost() {

@@ -7,7 +7,7 @@ import { LogoutBtn } from '../Index.js';
 function Header() {
     const authentication = useSelector((store) => store.authenticationSlice.status)
     const navigate = useNavigate()
-
+    console.log(authentication)
 
     const navItems = [
         {
@@ -41,6 +41,7 @@ function Header() {
 
     return (
         <div className="w-full h-16 relative bg-zinc-100 shadow-lg bg-opacity-80 backdrop-blur-[30px] select-none font-Inter">
+
             <div className="right-24 top-[24px] absolute">
                 <div className="relative text-zinc-900 flex justify-between items-center gap-10 h-full">
                     <nav>
@@ -59,8 +60,12 @@ function Header() {
                             }
 
                             { authentication && (
-                                <LogoutBtn />
-                            ) }
+                                <>
+                                    <LogoutBtn />
+                                </>
+                            )
+
+                            }
                         </ul>
                     </nav>
                 </div>

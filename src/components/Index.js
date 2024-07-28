@@ -14,6 +14,9 @@ import AuthenticationLayout from './AuthenticationLayout.jsx';
 import Tutorial from './Tutorial.jsx';
 import Error from './Error.jsx';
 import LoadComponent from './OptimizedLoading/LazyLoadComponent.jsx';
+import Status from './Status.jsx';
+import Sidebar from './SideBar/SideBar.jsx';
+import UserInfo from './UserInfo.jsx';
 
 
 export {
@@ -32,5 +35,8 @@ export {
     AuthenticationLayout,
     Tutorial,
     Error,
-    LoadComponent
+    LoadComponent,
+    Status,
+    Sidebar,
+    UserInfo
 };
