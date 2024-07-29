@@ -21,10 +21,10 @@ function Status() {
     }, []);
     return (
         <>
-            <div className='h-auto w-full flex items-center justify-center'>
+            <div className='h-7 w-7 flex items-center justify-center'>
 
                 {
-                    <LazyLoad className='h-3/4 w-3/4 p-0'>
+                    <LazyLoad className='h-full w-full'>
                         <img src={ isOnline ? OnlineLogo : OfflineLogo } alt="Status" />
                     </LazyLoad>
                 }
