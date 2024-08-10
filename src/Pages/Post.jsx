@@ -34,18 +34,18 @@ function Post() {
     return post && !loading ? (
         <div className='w-full min-h-dvh bg-zinc-50 shadow-lg py-10 flex flex-col items-center gap-4'>
 
-            <div className='w-1/2 shadow-lg bg-gray-500 rounded-2xl overflow-hidden'>
+            <div className='w-5/6 h-48 shadow-lg bg-gray-500 rounded-2xl overflow-hidden'>
                 { post.featuredImage ? <img src={ configurationService.getFilePreview(post.featuredImage) } alt={ post.title } /> : <h2>Loading...</h2> }
             </div>
-            <div className='flex gap-56 mt-4'>
-                <div className='font-bold text-xl w-full'>
-                    <h1 className='bg-black/5 px-10 py-2 w-fit shadow-lg rounded-md'>{ post.title }</h1>
-                    <p className='font-Inter font-light text-sm mt-5 ml-3'>{ isAuther ? "You are the owner" : "Someone else owns this" }</p>
+            <div className='flex flex-col px-4 w-full mt-4'>
+                <div className='flex flex-col items-center font-bold border-2 rounded-lg p-3 text-xl w-full'>
+                    <h1 className='w-full font-Inter'>{ post.title }</h1>
+                    <p className='font-Inter font-light text-sm w-full pt-3'>{ isAuther ? "Owner: YOU" : "Owner: OTHER" }</p>
                 </div>
 
                 <div>
                     { isAuther && (
-                        <div className='flex gap-4 text-xl font-Inter'>
+                        <div className='flex gap-x-4 mt-2 text-xl font-Inter'>
                             <Link to={ `/edit-post/${post.$id}` }>
                                 <Button
                                     className='bg-green-600 px-3 py-1 rounded-xl'
@@ -62,7 +62,8 @@ function Post() {
                 </div>
             </div>
             { isOpen && <DeletePost /> }
-            <div className='w-8/12 mt-7 shadow-xl p-8 browser-css'>
+            <div className='w-4/5 mt-2 text-xl font-Inter shadow-xl p-8 browser-css'>
+
                 { parse(post.content) }
             </div>
         </div>

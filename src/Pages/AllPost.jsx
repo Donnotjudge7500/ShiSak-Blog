@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { PostCard, Error, Sidebar } from '../components/Index.js';
 import { useSelector, useDispatch } from 'react-redux';
+import PostEvents from '../components/PostEvents.jsx';
 
 function AllPost() {
     const [posts, setPosts] = useState([]);
@@ -19,21 +20,25 @@ function AllPost() {
     },[])
 
     return (
-        <div className='w-11/12 max-w-screen-lg min-h-dvh m-auto mb-20'>
+        <div className='w-full max-w-screen-lg min-h-dvh m-auto mb-20'>
             { error ? <Error /> : <div>
-                <p className="text-3xl mt-20 font-bold text-gray-900 md:text-5xl md:leading-10">
-                    Resources and insights
-                </p>
-                <div className="flex w-full items-end border-b border-gray-300 mt-7"></div>
-                <div className='flex flex-wrap gap-x-16 pl-14'>
+                <div className='bg-white flex flex-col '>
+                    <p className="text-3xl pl-4 mt-10 font-bold text-gray-900 md:text-5xl md:leading-10">
+                        Resources and insights
+                    </p>
+                    <div className="w-full border-b border-gray-400 mt-7 flex flex-col items-end"></div>
+                </div>
+                <div className='w-full py-4 flex flex-col items-center gap-7 md:flex-row md:flex-wrap md:gap-10 md:ml-12'>
                     { posts.map((post) => (
-                        <div key={ post.$id } className='w-1/4 py-4 px-3'>
+                        <div key={ post.$id } >
                             <PostCard { ...post } />
                         </div>
                     )) }
                 </div>
             </div> }
-            
+            <div className='w-full h-20 bg-white rounded-t-md fixed bottom-0 md:hidden'>
+                <PostEvents />
+            </div>
         </div>
     )
 }

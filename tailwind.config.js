@@ -1,3 +1,4 @@
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: [
@@ -6,9 +7,9 @@ export default {
   ],
   theme: {
     extend: {
-      fontFamily: { 
+      fontFamily: {
         'Inter': ['Inter', 'sans-serif']
-      }
+      },
     },
   },
   plugins: [],

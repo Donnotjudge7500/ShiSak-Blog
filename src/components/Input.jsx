@@ -11,7 +11,7 @@ const Input = forwardRef(
         const id = useId()
         return (
             <div>
-                { label && (<label key={ id } className='text-base font-medium text-gray-900'>
+                { label && (<label key={ id } className='text-xl font-medium font-Inter text-gray-900 '>
                     { label }
                 </label>) }
                 <input type={ type }

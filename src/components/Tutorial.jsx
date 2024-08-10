@@ -33,19 +33,19 @@ const Tutorial = () => {
 
     return (
         <div className='mb-10'>
-            <div className="bg-black/50 px-32 py-20 mt-10">
-                <div className="flex justify-center items-center h-80 mt-5 overflow-hidden px-5 bg-zinc-500 rounded-lg">
+            <div className="bg-gradient-to-b from-purple-500 via-indigo-500 to-blue-500 py-20 mt-9 flex flex-col justify-evenly gap-10">
+                <div className="flex flex-col justify-between h-80 w-full mt-5  px-5 rounded-lg lg:flex-row">
                     <Transition
                         show={ elementVisibilities.isVisible1 }
                         enter="transition-transform duration-1000"
                         enterFrom="opacity-0 -translate-x-20"
-                        enterTo="opacity-100 translate-x-0"
+                        enterTo="opacity-100  translate-x-0"
                     >
-                        <p className="text-white font-Inter w-1/2 text-xl">
+                        <p className="text-white font-Inter text-xl font-semibold tracking-wider">
                             This is the <span className="font-Inter font-semibold text-purple-800">Navigation</span> section. You can navigate to different pages on this platform.
                         </p>
                     </Transition>
-                    <div className="overflow-hidden w-1/2">
+                    <div className="overflow-hidden">
                         <Transition
                             show={ elementVisibilities.isVisible1 }
                             enter="transition-transform duration-1000 ease-out"
@@ -60,18 +60,8 @@ const Tutorial = () => {
                     </div>
                 </div>
 
-                <div className="flex justify-center items-center h-80 mt-5 overflow-hidden px-5 bg-zinc-500 rounded-lg">
-                    <Transition
-                        show={ elementVisibilities.isVisible2 }
-                        enter="transition-transform duration-1000"
-                        enterFrom="opacity-0 -translate-x-20"
-                        enterTo="opacity-100 translate-x-0"
-                    >
-                        <p className="text-white font-Inter w-1/2 text-xl">
-                            This <span className="font-Inter font-semibold text-purple-800">Find all posts</span> button will navigate you to all the resources and insights.
-                        </p>
-                    </Transition>
-                    <div className="overflow-hidden w-1/2">
+                <div className="flex flex-col justify-between items-center h-80 mt-5 px-5 lg:flex-row lg:gap-10">
+                    <div className="overflow-hidden lg:w-1/2">
                         <Transition
                             show={ elementVisibilities.isVisible2 }
                             enter="transition-transform duration-1000 ease-out"
@@ -81,24 +71,34 @@ const Tutorial = () => {
                             <img src={ findAllPostBtn } alt="Tut." className="rounded-lg" />
                         </Transition>
                     </div>
+                    <Transition
+                        show={ elementVisibilities.isVisible2 }
+                        enter="transition-transform duration-1000"
+                        enterFrom="opacity-0 -translate-x-20"
+                        enterTo="opacity-100 translate-x-0"
+                    >
+                        <p className="text-white font-Inter   text-xl font-semibold">
+                            This <span className="font-Inter font-semibold text-purple-800">Find all posts</span> button will navigate you to all the resources and insights.
+                        </p>
+                    </Transition>
                 </div>
             </div>
 
             
             {/* Login And SignUp Tutorial Page */}
-            <div className="bg-black/40 px-32 py-20">
-                <div className="flex justify-center items-center h-80 mt-5 overflow-hidden px-5 bg-zinc-400 rounded-lg">
+            <div className="bg-gradient-to-b from-purple-500 via-indigo-500 to-blue-500 py-20 mt-9 flex flex-col justify-between items-center gap-10">
+                <div className="flex flex-col justify-center items-center w-full h-80 mt-5 px-5  rounded-lg lg:flex-row">
                     <Transition
                         show={ elementVisibilities.isVisible3 }
                         enter="transition-transform duration-1000"
                         enterFrom="opacity-0 -translate-x-20"
                         enterTo="opacity-100 translate-x-0"
                     >
-                        <p className="text-white font-Inter w-1/2 text-xl">
+                        <p className="text-white font-Inter  font-semibold text-xl">
                             This is the <span className="font-Inter font-semibold text-purple-800">Login</span> section. You can log in by using your email and password.
                         </p>
                     </Transition>
-                    <div className="overflow-hidden w-1/2">
+                    <div className="overflow-hidden lg:w-1/2">
                         <Transition
                             show={ elementVisibilities.isVisible3 }
                             enter="transition-transform duration-1000 ease-out"
@@ -110,18 +110,8 @@ const Tutorial = () => {
                     </div>
                 </div>
 
-                <div className="flex justify-center items-center h-80 mt-5 overflow-hidden px-5 bg-zinc-400 rounded-lg">
-                    <Transition
-                        show={ elementVisibilities.isVisible4 }
-                        enter="transition-transform duration-1000"
-                        enterFrom="opacity-0 -translate-x-20"
-                        enterTo="opacity-100 translate-x-0"
-                    >
-                        <p className="text-white font-Inter w-1/2 text-xl">
-                            This is the <span className="font-Inter font-semibold text-purple-800">Sign Up</span> section. You can create account if you don't have one.
-                        </p>
-                    </Transition>
-                    <div className="overflow-hidden w-1/2">
+                <div className="flex flex-col justify-center items-center h-80  mt-5  px-5  rounded-lg lg:flex-row  lg:gap-10">
+                    <div className="overflow-hidden lg:w-1/2">
                         <Transition
                             show={ elementVisibilities.isVisible4 }
                             enter="transition-transform duration-1000 ease-out"
@@ -131,6 +121,16 @@ const Tutorial = () => {
                             <img src={ signupSection } alt="signupSection.png" className="rounded-lg" />
                         </Transition>
                     </div>
+                    <Transition
+                        show={ elementVisibilities.isVisible4 }
+                        enter="transition-transform duration-1000"
+                        enterFrom="opacity-0 -translate-x-20"
+                        enterTo="opacity-100 translate-x-0"
+                    >
+                        <p className="text-white font-Inter  font-semibold text-xl">
+                            This is the <span className="font-Inter font-semibold text-purple-800">Sign Up</span> section. You can create account if you don't have one.
+                        </p>
+                    </Transition>
                 </div>
             </div>
         </div>

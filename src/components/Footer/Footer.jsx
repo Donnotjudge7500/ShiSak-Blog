@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 
 function Footer() {
     return (
-        <div className="bg-violet-500 w-full min-h-24 flex justify-center items-center">
+        <div className="bg-gradient-to-b from-blue-500 via-indigo-500 to-purple-500 w-full min-h-24 flex justify-center items-center">
             <section>
                     <div className="flex flex-wrap">
                         <div className="w-full p-6 md:w-1/2 lg:w-5/12">

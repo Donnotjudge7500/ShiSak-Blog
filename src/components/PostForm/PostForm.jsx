@@ -93,7 +93,7 @@ function PostForm({ post }) {
     }, [watch, slugTransform, setValue]);
     return (
         <form onSubmit={ handleSubmit(submit) } className='flex flex-wrap mt-10'>
-            <div className='w-2/3 mb-20 px-2 flex text-2xl flex-col gap-3 overflow-hidden'>
+            <div className='w-full md:w-2/3 mb-20 px-4 flex text-2xl flex-col gap-3 overflow-hidden'>
                 <Input
                     label='Title:'
                     placeholder='Title'
@@ -113,7 +113,7 @@ function PostForm({ post }) {
                 />
                 <RTE label="Content :" name="content" control={ control } defaultValue={ getValues("content") } />
             </div>
-            <div className='w-1/3 p-3 flex flex-col gap-3 border-4 shadow-xl h-fit rounded-xl'>
+            <div className='w-full md:w-1/3 p-3 flex flex-col border-4 shadow-xl h-fit rounded-xl'>
                 <Input
                     label='Featured Image:'
                     type='file'
@@ -129,7 +129,7 @@ function PostForm({ post }) {
                 <Select
                     options={ ["active", "inactive"] }
                     label="Status: "
-                    className="mb-4"
+                    className="mb-4 w-1/2"
                     { ...register('status', { required: true }) }
                 />
                 <Button

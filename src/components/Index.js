@@ -17,6 +17,7 @@ import LoadComponent from './OptimizedLoading/LazyLoadComponent.jsx';
 import Status from './Status.jsx';
 import Sidebar from './SideBar/SideBar.jsx';
 import UserInfo from './UserInfo.jsx';
+import PostEvents from './PostEvents.jsx';
 
 
 export {
@@ -38,5 +39,6 @@ export {
     LoadComponent,
     Status,
     Sidebar,
-    UserInfo
+    UserInfo,
+    PostEvents
 };
